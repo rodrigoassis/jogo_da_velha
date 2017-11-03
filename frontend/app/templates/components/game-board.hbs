@@ -1,8 +1,14 @@
 <section class="section--center mdl-grid mdl-grid--no-spacing">
   {{#if draw}}
     <h3>It's a draw!</h3>
+    <button {{action "doRefresh"}} class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+      New Game
+    </button>
   {{else if winner}}
     <h3>Congratulations! Player {{winner}} has won this game!</h3>
+      <button {{action "doRefresh"}} class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+        New Game
+      </button>
   {{else}}
     <h3>Player {{turn}}, it's your turn!</h3>
   {{/if}}

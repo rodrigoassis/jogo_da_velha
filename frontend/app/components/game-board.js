@@ -24,6 +24,9 @@ export default Component.extend({
       if (this.get('plays') == 9 && !checkEndGame()) {
         this.set('draw', true);
       }
+    },
+    doRefresh: function () {
+      window.location.reload(true);
     }
   }
 });

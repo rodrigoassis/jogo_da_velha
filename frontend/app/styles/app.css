@@ -1,0 +1,38 @@
+.mdl-layout__header-row h3 a {
+  color: white;
+  text-decoration: none;
+}
+
+.mdl-demo main > .mdl-layout__tab-panel {
+  padding: 8px;
+  padding-top: 48px;
+}
+
+.mdl-demo main button {
+  width: 100%;
+  height: 5em;
+  font-size: 20px;
+}
+
+.mdl-demo section.section--center {
+  max-width: 870px;
+  margin-bottom: 48px;
+}
+
+.mdl-demo section.section--center a {
+  width: 100%;
+}
+
+#game {
+  height: 600px;
+}
+
+.line {
+  height: 200px;
+}
+
+.space {
+  width: 290px;
+  height: 200px;
+  border: solid;
+}

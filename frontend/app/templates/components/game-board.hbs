@@ -1,0 +1,37 @@
+<section class="section--center mdl-grid mdl-grid--no-spacing">
+  {{#if draw}}
+    <h3>It's a draw!</h3>
+    <button {{action "doRefresh"}} class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+      New Game
+    </button>
+  {{else if winner}}
+    <h3>Congratulations! Player {{winner}} has won this game!</h3>
+      <button {{action "doRefresh"}} class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
+        New Game
+      </button>
+  {{else}}
+    <h3>Player {{turn}}, it's your turn!</h3>
+  {{/if}}
+</section>
+
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+  <table id="game">
+    <tr class="line">
+      <td class="space" {{action "fillSpace" 'space1'}} id="space1"></td>
+      <td class="space" {{action "fillSpace" 'space2'}} id="space2"></td>
+      <td class="space" {{action "fillSpace" 'space3'}} id="space3"></td>
+    </tr>
+    <tr class="line">
+      <td class="space" {{action "fillSpace" 'space4'}} id="space4"></td>
+      <td class="space" {{action "fillSpace" 'space5'}} id="space5"></td>
+      <td class="space" {{action "fillSpace" 'space6'}} id="space6"></td>
+    </tr>
+    <tr class="line">
+      <td class="space" {{action "fillSpace" 'space7'}} id="space7"></td>
+      <td class="space" {{action "fillSpace" 'space8'}} id="space8"></td>
+      <td class="space" {{action "fillSpace" 'space9'}} id="space9"></td>
+    </tr>
+  </table>
+</section>
+
+{{yield}}

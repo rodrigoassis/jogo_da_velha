@@ -8,6 +8,7 @@ const Router = EmberRouter.extend({
 
 Router.map(function() {
   this.route('2players');
+  this.route('scoreboard');
 });
 
 export default Router;

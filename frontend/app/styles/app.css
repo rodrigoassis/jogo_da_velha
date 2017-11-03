@@ -36,3 +36,7 @@
   height: 200px;
   border: solid;
 }
+
+.mdl-data-table {
+  width: 100%;
+}

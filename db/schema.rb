@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20171031152824) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -21,9 +24,9 @@ ActiveRecord::Schema.define(version: 20171031152824) do
 
   create_table "scores", force: :cascade do |t|
     t.integer "player_id"
-    t.integer "victories"
-    t.integer "draws"
-    t.integer "defeats"
+    t.integer "victories", default: 0
+    t.integer "draws", default: 0
+    t.integer "defeats", default: 0
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["player_id"], name: "index_scores_on_player_id"

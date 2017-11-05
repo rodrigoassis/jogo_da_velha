@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import Ember from 'ember';
 
 export default Component.extend({
   init() {
@@ -20,9 +21,13 @@ export default Component.extend({
       }
       if (checkEndGame()) {
         this.set('winner', (this.get('turn') == 1 ? 2 : 1));
+        Ember.$.post("/api/result.json", { name: 'Player ' + this.get('winner'), result: 'victory' });
+        Ember.$.post("/api/result.json", { name: 'Player ' + (this.get('winner') == 1 ? 2 : 1), result: 'defeat' });
       }
       if (this.get('plays') == 9 && !checkEndGame()) {
         this.set('draw', true);
+        Ember.$.post("/api/result.json", { name: 'Player 1', result: 'draw' });
+        Ember.$.post("/api/result.json", { name: 'Player 2', result: 'draw' });
       }
     },
     doRefresh: function () {
@@ -41,9 +46,9 @@ function checkEndGame() {
 }
 
 function equalSpaces(a, b, c) {
-  var bgA = $("#space" + a).css("background-image");
-  var bgB = $("#space" + b).css("background-image");
-  var bgC = $("#space" + c).css("background-image");
+  var bgA = Ember.$("#space" + a).css("background-image");
+  var bgB = Ember.$("#space" + b).css("background-image");
+  var bgC = Ember.$("#space" + c).css("background-image");
   if ((bgA == bgB) && (bgB == bgC) && (bgA != "none")) {
     return true;
   }

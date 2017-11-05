@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :score do
-    player_id 1
+    player
     victories 1
     draws 1
     defeats 1
